@@ -1,0 +1,11 @@
+.svg {
+  filter: hue-rotate(var(--bg-saturation));
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateZ(0);
+  width: 100%;
+  z-index: -1;
+  transition: filter 0.2s ease-in-out;
+}
