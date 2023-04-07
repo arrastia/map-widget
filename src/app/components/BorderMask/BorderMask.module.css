@@ -1,0 +1,67 @@
+.mask {
+  --bg: white;
+  --transparent: transparent;
+
+  -moz-user-select: none;
+  -webkit-mask-image: linear-gradient(var(--direction), var(--mask-visible) 25%, var(--mask-hidden));
+  -webkit-user-select: none;
+
+  height: 100%;
+  margin-left: calc(-1 * var(--body-margin-left));
+  mask-image: linear-gradient(var(--direction), var(--mask-visible) 25%, var(--mask-hidden));
+  opacity: 0.95;
+  pointer-events: none;
+  position: relative;
+  position: absolute;
+  top: 0;
+  user-select: none;
+  width: calc(100% + var(--body-margin-left) + var(--body-margin-right));
+  z-index: 0;
+}
+.mask.horizontal::before {
+  --direction: to right;
+  --height: 100%;
+  --width: 12%;
+
+  left: 0;
+}
+.mask.horizontal::after {
+  --direction: to left;
+  --height: 100%;
+  --width: 12%;
+
+  right: 0;
+}
+.mask.vertical::before {
+  --direction: to top;
+  --height: 12%;
+  --width: 100%;
+
+  bottom: 0;
+}
+.mask.vertical::after {
+  --direction: to bottom;
+  --height: 12%;
+  --width: 100%;
+
+  top: 0;
+}
+
+.mask::before {
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
+  background: linear-gradient(var(--direction), var(--bg), var(--transparent));
+  content: '';
+  height: var(--height);
+  position: absolute;
+  width: var(--width);
+}
+.mask::after {
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
+  background: linear-gradient(var(--direction), var(--bg), var(--transparent));
+  content: '';
+  height: var(--height);
+  position: absolute;
+  width: var(--width);
+}
