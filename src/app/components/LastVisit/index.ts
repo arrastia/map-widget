@@ -1,0 +1,1 @@
+export { LastVisit } from './LastVisit';

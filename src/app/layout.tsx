@@ -6,6 +6,7 @@ import styles from './layout.module.css';
 
 import { Background } from './components/Background';
 import { Granular } from './components/Granular';
+import { LastVisit } from './components/LastVisit';
 
 import type { Metadata } from 'next';
 
@@ -17,9 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className={styles.header}>
           <h1 className={styles.title}>Map widget</h1>
-          <small className={styles.subtitle}>
-            Last visit from: <Link href="https://arrastia.me">Tallinn, Estonia</Link>
-          </small>
+          {/* @ts-expect-error Server Component */}
+          <LastVisit />
         </header>
         {children}
         <footer className={styles.footer}>
