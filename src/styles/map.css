@@ -643,3 +643,7 @@ a.mapboxgl-ctrl-logo.mapboxgl-compact {
 .mapboxgl-canvas-container.mapboxgl-touch-pan-blocker-override.mapboxgl-scrollable-page .mapboxgl-canvas {
   touch-action: pan-x pan-y;
 }
+
+.mapboxgl-control-container {
+  display: none;
+}

@@ -62,10 +62,6 @@ a {
   display: none;
 }
 
-.mapboxgl-control-container {
-  display: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   [data-animate] {
     --delay: 120ms;
