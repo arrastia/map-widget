@@ -1,38 +1,3 @@
-.map {
-  background: #fbf9f6;
-  border-radius: 81px;
-  box-shadow: 0px 273px 109px rgba(0, 0, 0, 0.01), 0px 153px 92px rgba(0, 0, 0, 0.05), 0px 68px 68px rgba(0, 0, 0, 0.09),
-    0px 17px 38px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-  height: 620px;
-  overflow: hidden;
-  position: relative;
-  width: 620px;
-  z-index: 1;
-}
-.map::after {
-  background: rgba(255, 255, 255, 0.7);
-  content: '';
-  filter: blur(250px);
-  height: 336px;
-  left: -112px;
-  position: absolute;
-  top: -95px;
-  width: 1831px;
-}
-
-.granular {
-  background: url('https://s3-alpha-sig.figma.com/img/4272/878e/6961412f647905b45aa476e2c102c090?Expires=1681689600&Signature=FNE5Lu3N0rcIv5Inz15EX~BswEOMhM32SjHEAKIiRf2haMNX9YNkCPtJPueknadx5lmhCmvY-F35yvVUTMtUIOK4qxuRlbjtYGJRqmrg4GI3tcHzSVIiT-7Zjnp~6BGohLyviwziOfezIsI6~utF6HPTVkpFv6BfUzTChAJSky2FN~79sAI9YrXDnUc804IkuGyQlugw6J7HfLQ6pZ4tan3YoQvsij5m3QhT2nZ9Qtmr8Qqz1wDODBOROz-dMCdPfgUOFfXMR~VRPC1R8qYp2zyyqpG50X~Gi0281wM4dY5MlL479QDW-oztcYlNqM5xUaLO4m6fKJ3wSU757CUEAw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
-  height: 100%;
-  left: 0;
-  mix-blend-mode: soft-light;
-  opacity: 0.75;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
 .location {
   background: url('https://s3-alpha-sig.figma.com/img/4272/878e/6961412f647905b45aa476e2c102c090?Expires=1681689600&Signature=FNE5Lu3N0rcIv5Inz15EX~BswEOMhM32SjHEAKIiRf2haMNX9YNkCPtJPueknadx5lmhCmvY-F35yvVUTMtUIOK4qxuRlbjtYGJRqmrg4GI3tcHzSVIiT-7Zjnp~6BGohLyviwziOfezIsI6~utF6HPTVkpFv6BfUzTChAJSky2FN~79sAI9YrXDnUc804IkuGyQlugw6J7HfLQ6pZ4tan3YoQvsij5m3QhT2nZ9Qtmr8Qqz1wDODBOROz-dMCdPfgUOFfXMR~VRPC1R8qYp2zyyqpG50X~Gi0281wM4dY5MlL479QDW-oztcYlNqM5xUaLO4m6fKJ3wSU757CUEAw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),
     rgba(255, 255, 255, 0.5);
@@ -85,5 +50,15 @@
   .granular {
     background-color: #f7f7f7; /* Fallback background color */
     opacity: 1; /* Fallback opacity value */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .location {
+    bottom: 2rem;
+    left: 2rem;
+    position: fixed;
+    width: calc(100% - 4rem);
+    justify-content: center;
   }
 }

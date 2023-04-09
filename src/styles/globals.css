@@ -7,28 +7,27 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  touch-action: manipulation;
-
-  --body-margin-left: max(24px, env(safe-area-inset-left));
-  --body-margin-right: max(24px, env(safe-area-inset-right));
-
+  align-items: center;
   background-color: var(--bg);
   color: var(--text);
-  min-height: 100%;
-  position: relative;
-  padding-left: var(--body-margin-left);
-  padding-right: var(--body-margin-right);
-  padding-bottom: env(safe-area-inset-bottom);
-
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  min-height: 100%;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  touch-action: manipulation;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow: none;
+  }
 }
 
 strong {

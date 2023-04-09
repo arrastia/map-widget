@@ -3,12 +3,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   gap: 1rem;
   margin: 1rem;
 }
 
 .title {
-  background: linear-gradient(122.32deg, var(--text) 30.66%, var(--bg-primary) 93.8%);
+  background: linear-gradient(122.32deg, var(--text) 30.66%, var(--primary-color) 93.8%);
   background-clip: text;
   background-size: cover;
   color: transparent;
@@ -26,13 +27,59 @@
   -webkit-transform: translateY(32px);
   transform: translateY(32px);
   opacity: 0;
-  -webkit-animation: src_fadeFooter__UDCKP 0.3s ease forwards;
-  animation: src_fadeFooter__UDCKP 0.3s ease forwards;
-  -webkit-animation-delay: 2.3s;
-  animation-delay: 2.3s;
+  -webkit-animation: fade-in 0.3s ease forwards;
+  animation: fade-in 0.3s ease forwards;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
-@-webkit-keyframes src_fadeFooter__UDCKP {
+@media screen and (max-width: 768px) {
+  .header {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: var(--glass-50);
+    background-color: var(--glass-70);
+    box-shadow: 0px 1px 35px 1px rgb(0, 0, 0, 20%);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+  }
+
+  .title {
+    margin: 0.75rem;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+/* 
+@media screen and (max-height: 950px) {
+  .header {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: var(--glass-50);
+    background-color: var(--glass-70);
+    box-shadow: 0px 1px 35px 1px rgb(0, 0, 0, 20%);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+  }
+
+  .title {
+    margin: 0.75rem;
+  }
+
+  .footer {
+    display: none;
+  }
+} */
+
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
     -webkit-transform: translateY(32px);
@@ -46,7 +93,7 @@
   }
 }
 
-@keyframes src_fadeFooter__UDCKP {
+@keyframes fade-in {
   0% {
     opacity: 0;
     -webkit-transform: translateY(32px);

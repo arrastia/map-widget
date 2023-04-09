@@ -1,5 +1,5 @@
 .svg {
-  filter: hue-rotate(var(--bg-saturation));
+  filter: hue-rotate(0deg);
   height: 100%;
   left: 0;
   position: fixed;
