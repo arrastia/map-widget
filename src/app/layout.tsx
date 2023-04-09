@@ -9,6 +9,7 @@ import { Granular } from './components/Granular';
 
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Map widget', description: 'Great way to check were you are' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
