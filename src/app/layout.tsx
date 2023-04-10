@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'Elegantly pinpoint your location.',
     url: 'https://map-widget.vercel.app',
     siteName: 'Map widget',
-    images: [{ url: 'https://map-widget.vercel.app/og.svg', width: 1200, height: 630 }],
+    images: [{ url: 'https://map-widget.vercel.app/og.png', width: 1200, height: 630 }],
     locale: 'en-US',
     type: 'website'
   }
