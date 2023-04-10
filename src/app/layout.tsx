@@ -34,8 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
         <footer className={styles.footer}>
-          Designed by <Link href="https://twitter.com/cristicrtu/status/1633561109465579525?s=46&t=mXgp6eoY1kHRfI00chjHyg">@cristicrtu</Link> · Made
-          by <Link href="https://arrastia.me">@PabloArrastia</Link>
+          Designed by <Link href="https://twitter.com/cristicrtu/status/1633561109465579525?s=46&t=mXgp6eoY1kHRfI00chjHyg">Cristicrtu</Link>, made by{' '}
+          <Link href="https://arrastia.me">Arrastia</Link>
         </footer>
 
         <Background />
