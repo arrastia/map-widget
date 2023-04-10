@@ -10,7 +10,19 @@ import { Granular } from './components/Granular';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
-export const metadata: Metadata = { title: 'Map widget', description: 'Great way to check were you are' };
+export const metadata: Metadata = {
+  title: 'Location widget',
+  description: 'Elegantly pinpoint your location.',
+  openGraph: {
+    title: 'Location widget',
+    description: 'Elegantly pinpoint your location.',
+    url: 'https://map-widget.vercel.app',
+    siteName: 'Map widget',
+    images: [{ url: 'https://map-widget.vercel.app/og.svg', width: 1200, height: 630 }],
+    locale: 'en-US',
+    type: 'website'
+  }
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
