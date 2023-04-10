@@ -1,6 +1,7 @@
 {
   "name": "map-widget",
-  "version": "0.1.0",
+  "description": "Elegantly pinpoint your location.",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
