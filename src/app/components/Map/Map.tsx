@@ -7,7 +7,7 @@ import mapBox from 'mapbox-gl';
 import 'styles/map.css';
 import styles from './Map.module.css';
 
-import { Marker } from './components/Marker';
+import { Marker } from 'app/components/Marker';
 
 import type { Map as MapType } from 'mapbox-gl';
 
