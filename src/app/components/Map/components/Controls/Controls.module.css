@@ -1,6 +1,5 @@
 .controls {
-  background: url('https://s3-alpha-sig.figma.com/img/4272/878e/6961412f647905b45aa476e2c102c090?Expires=1681689600&Signature=FNE5Lu3N0rcIv5Inz15EX~BswEOMhM32SjHEAKIiRf2haMNX9YNkCPtJPueknadx5lmhCmvY-F35yvVUTMtUIOK4qxuRlbjtYGJRqmrg4GI3tcHzSVIiT-7Zjnp~6BGohLyviwziOfezIsI6~utF6HPTVkpFv6BfUzTChAJSky2FN~79sAI9YrXDnUc804IkuGyQlugw6J7HfLQ6pZ4tan3YoQvsij5m3QhT2nZ9Qtmr8Qqz1wDODBOROz-dMCdPfgUOFfXMR~VRPC1R8qYp2zyyqpG50X~Gi0281wM4dY5MlL479QDW-oztcYlNqM5xUaLO4m6fKJ3wSU757CUEAw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),
-    rgba(255, 255, 255, 0.5);
+  background: var(--noise-background), rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px 65px 26px rgba(62, 48, 27, 0.01), 0px 36px 22px rgba(62, 48, 27, 0.05), 0px 16px 16px rgba(62, 48, 27, 0.09),

@@ -26,7 +26,8 @@ body {
 
 @media screen and (max-width: 768px) {
   body {
-    overflow: none;
+    overflow: hidden;
+    overscroll-behavior-x: none;
   }
 }
 
