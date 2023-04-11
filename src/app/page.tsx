@@ -15,7 +15,7 @@ export default function Home({ searchParams: { fallback, location } }: HomeProps
     <main className={styles.main}>
       <section className={styles.section}>
         <div aria-hidden={true} className={styles.granular} />
-        <Map city={String(city)} coordinates={[Number(longitude), Number(latitude)]} token={process.env.MAPBOX_TOKEN as string} />
+        <Map city={decodeURIComponent(String(city))} coordinates={[Number(longitude), Number(latitude)]} token={process.env.MAPBOX_TOKEN as string} />
         <BorderMask direction="vertical" />
         <BorderMask direction="horizontal" />
       </section>
