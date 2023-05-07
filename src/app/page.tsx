@@ -6,9 +6,9 @@ import { Toast } from './components/Toast';
 
 import type { Geo } from '@vercel/edge';
 
-export type HomeProps = { searchParams: { fallback: string; location: string } };
+export type HomeProps = { searchParams: { fallback: string; location: string; last_location: string } };
 
-export default function Home({ searchParams: { fallback, location } }: HomeProps) {
+export default function Home({ searchParams: { fallback, location, last_location } }: HomeProps) {
   const { city, latitude, longitude }: Geo = JSON.parse(location) || {};
 
   return (
