@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vercel/edge": "^0.3.1",
+    "@vercel/kv": "^0.1.1",
     "mapbox-gl": "^2.13.0",
     "next": "^13.3.0",
     "react": "18.2.0",
