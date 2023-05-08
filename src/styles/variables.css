@@ -16,6 +16,7 @@
   --map-granular-opacity: 0.75;
   --noise-background: url('/assets/images/noise.webp');
   --primary-color: #6fa0fa;
+  --secondary-color: #ccc;
   --selection: rgb(167, 255, 235, 0.7);
   --text: #2d333b;
   --z-index-underneath: -1;
