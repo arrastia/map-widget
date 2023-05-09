@@ -1,29 +1,23 @@
 'use client';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import styles from './Location.module.css';
 
-export const Location = () => {
+export type LocationProps = { from: string; to: string };
+
+export const Location = ({ from, to }: LocationProps) => {
   const [toggle, setToggle] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => setToggle(prev => !prev), 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
 
   return (
     <label className={styles.location}>
-      <span className={styles.text}>
+      <span className={styles.text} onAnimationIteration={() => setToggle(prev => !prev)}>
         {toggle ? (
           <Fragment>
-            Current: <strong>Huarte</strong>
+            Current location: <strong>{to}</strong>
           </Fragment>
         ) : (
           <Fragment>
-            Last location from: <strong>Tallinn</strong>
+            Last location from: <strong>{from}</strong>
           </Fragment>
         )}
       </span>
