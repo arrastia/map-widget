@@ -18,14 +18,14 @@ export default function Home({ searchParams: { fallback, location, last_location
         <div aria-hidden={true} className={styles.granular} />
         <Map
           lastLocation={{
-            city: decodeURIComponent(String(city)),
-            coordinates: [Number(longitude), Number(latitude)],
-            country: decodeURIComponent(String(country))
-          }}
-          location={{
             city: decodeURIComponent(String(lastCity)),
             coordinates: [Number(lastLongitude), Number(lastLatitude)],
             country: decodeURIComponent(String(lastCountry))
+          }}
+          location={{
+            city: decodeURIComponent(String(city)),
+            coordinates: [Number(longitude), Number(latitude)],
+            country: decodeURIComponent(String(country))
           }}
           token={process.env.MAPBOX_TOKEN as string}
         />
