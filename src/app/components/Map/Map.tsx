@@ -13,9 +13,9 @@ import { Marker } from 'app/components/Marker';
 import type { Map as MapType } from 'mapbox-gl';
 
 const style = 'mapbox://styles/mapbox/streets-v12?optimize=true';
-const ZOOM = 13;
+const zoom = 13;
 
-export type Location = { city: string; coordinates: [number, number] };
+export type Location = { city: string; coordinates: [number, number]; country: string };
 export type MapProps = { lastLocation: Location; location: Location; token: string };
 
 export const Map = ({ lastLocation, location, token }: MapProps) => {
@@ -32,16 +32,10 @@ export const Map = ({ lastLocation, location, token }: MapProps) => {
   }, []);
 
   useEffect(() => {
-    const map = new mapBox.Map({
-      accessToken: token,
-      center: lastLocation.coordinates,
-      container: mapContainer.current || '',
-      maxZoom: ZOOM,
-      minZoom: 1,
-      style,
-      zoom: ZOOM
-    });
-    map.flyTo({ center: location.coordinates, zoom: ZOOM });
+    const { current } = mapContainer;
+
+    const map = new mapBox.Map({ accessToken: token, center: lastLocation.coordinates, container: current || '', maxZoom: zoom, style, zoom });
+    map.flyTo({ center: location.coordinates, zoom });
 
     createMarker(map, location.coordinates, 'current-location');
     createMarker(map, lastLocation.coordinates, 'last-location');
@@ -52,13 +46,13 @@ export const Map = ({ lastLocation, location, token }: MapProps) => {
     };
   }, [createMarker, lastLocation, location, token]);
 
-  const flyTo = (coordinates: [number, number]) => map?.flyTo({ center: coordinates, zoom: ZOOM });
+  const flyTo = (coordinates: [number, number]) => map?.flyTo({ center: coordinates, zoom });
 
   return (
     <Fragment>
       <div ref={mapContainer} />
 
-      <Location from={location.city} to={lastLocation.city} />
+      <Location from={`${location.city}, ${location.country}`} to={`${lastLocation.city}, ${lastLocation.country}`} />
       <Controls onBackIconClick={() => flyTo(lastLocation.coordinates)} onLocationIconClick={() => flyTo(location.coordinates)} />
     </Fragment>
   );
