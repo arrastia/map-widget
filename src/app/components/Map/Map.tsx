@@ -52,7 +52,7 @@ export const Map = ({ lastLocation, location, token }: MapProps) => {
     <Fragment>
       <div ref={mapContainer} />
 
-      <Location from={`${location.city}, ${location.country}`} to={`${lastLocation.city}, ${lastLocation.country}`} />
+      <Location from={`${lastLocation.city}, ${lastLocation.country}`} to={`${location.city}, ${location.country}`} />
       <Controls onBackIconClick={() => flyTo(lastLocation.coordinates)} onLocationIconClick={() => flyTo(location.coordinates)} />
     </Fragment>
   );
