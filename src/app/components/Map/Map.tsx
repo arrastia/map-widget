@@ -2,13 +2,11 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import Image from 'next/image';
-
 import mapBox from 'mapbox-gl';
 
 import 'styles/map.css';
-import styles from './Map.module.css';
 
+import { Controls } from 'app/components/Controls';
 import { Location } from 'app/components/Location';
 import { Marker } from 'app/components/Marker';
 
@@ -59,35 +57,9 @@ export const Map = ({ lastLocation, location, token }: MapProps) => {
   return (
     <Fragment>
       <div ref={mapContainer} />
-      <Location />
 
-      {/* <label className={`${styles.location} ${styles.current}`} onClick={() => flyTo(location.coordinates)}>
-        Current location: <strong>{location.city}</strong>
-      </label>
-      <label className={`${styles.location} ${styles.last}`} onClick={() => flyTo(lastLocation.coordinates)}>
-        Last location from: <strong>{lastLocation.city}</strong>
-      </label> */}
-      <div className={styles.controls}>
-        <Image
-          alt="Back icon"
-          className={styles.icon}
-          height={20}
-          onClick={() => flyTo(lastLocation.coordinates)}
-          role="button"
-          src="/assets/icons/previous-location.svg"
-          width={20}
-        />
-        <hr aria-hidden={true} className={styles.divider} />
-        <Image
-          alt="Location icon"
-          className={styles.icon}
-          height={20}
-          onClick={() => flyTo(location.coordinates)}
-          role="button"
-          src="/assets/icons/location.svg"
-          width={20}
-        />
-      </div>
+      <Location from={location.city} to={lastLocation.city} />
+      <Controls onBackIconClick={() => flyTo(lastLocation.coordinates)} onLocationIconClick={() => flyTo(location.coordinates)} />
     </Fragment>
   );
 };
