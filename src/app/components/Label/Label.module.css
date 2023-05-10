@@ -2,8 +2,8 @@
   align-items: flex-start;
   backdrop-filter: blur(3px);
   background: var(--noise-background), rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   bottom: 2rem;
   box-shadow: var(--box-shadow-small);
   display: flex;
@@ -32,12 +32,5 @@
     left: 2rem;
     position: fixed;
     width: calc(100% - 4rem);
-  }
-}
-
-@media not all and (mix-blend-mode: screen) {
-  .granular {
-    background-color: #f7f7f7;
-    opacity: 1;
   }
 }

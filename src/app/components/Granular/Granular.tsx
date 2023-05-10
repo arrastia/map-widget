@@ -1,7 +1,7 @@
 import styles from './Granular.module.css';
 
 export const Granular = () => (
-  <svg className={styles.granular} id="texture">
+  <svg aria-hidden={true} className={styles.granular} id="texture">
     <filter id="noise">
       <feTurbulence baseFrequency=".8" numOctaves="4" stitchTiles="stitch" type="fractalNoise" />
       <feColorMatrix type="matrix" values="0" />

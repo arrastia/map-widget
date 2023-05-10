@@ -5,52 +5,55 @@ import { createRoot } from 'react-dom/client';
 import mapBox from 'mapbox-gl';
 
 import 'styles/map.css';
-import styles from './Map.module.css';
 
+import { Controls } from 'app/components/Controls';
+import { Location } from 'app/components/Location';
 import { Marker } from 'app/components/Marker';
 
 import type { Map as MapType } from 'mapbox-gl';
 
-const center: [number, number] = [24.753574, 59.436962];
 const style = 'mapbox://styles/mapbox/streets-v12?optimize=true';
-const ZOOM = 13;
+const zoom = 13;
 
-export type MapProps = { city: string; coordinates: [number, number]; token: string };
+export type Location = { city: string; coordinates: [number, number]; country: string };
+export type MapProps = { lastLocation: Location; location: Location; token: string };
 
-export const Map = ({ city, coordinates, token }: MapProps) => {
+export const Map = ({ lastLocation, location, token }: MapProps) => {
   const [map, setMap] = useState<MapType>();
 
   const mapContainer = useRef<HTMLDivElement>(null);
 
-  // prettier-ignore
-  const createMarker = useCallback((map: MapType) => {
+  const createMarker = useCallback((map: MapType, coordinates: [number, number], type: 'current-location' | 'last-location') => {
     const element = document.createElement('div');
     const root = createRoot(element);
-    root.render(<Marker />);
+    root.render(<Marker type={type} />);
 
     new mapBox.Marker(element).setLngLat(coordinates).addTo(map);
-  }, [coordinates]);
+  }, []);
 
   useEffect(() => {
-    const map = new mapBox.Map({ accessToken: token, center, container: mapContainer.current || '', minZoom: 1, maxZoom: ZOOM, style, zoom: ZOOM });
-    map.flyTo({ center: coordinates, zoom: ZOOM });
+    const { current } = mapContainer;
 
-    createMarker(map);
+    const map = new mapBox.Map({ accessToken: token, center: lastLocation.coordinates, container: current || '', maxZoom: zoom, style, zoom });
+    map.flyTo({ center: location.coordinates, zoom });
+
+    createMarker(map, location.coordinates, 'current-location');
+    createMarker(map, lastLocation.coordinates, 'last-location');
     setMap(map);
 
     return () => {
       map.remove();
     };
-  }, [coordinates, createMarker, token]);
+  }, [createMarker, lastLocation, location, token]);
 
-  const flyTo = (coordinates: [number, number]) => map?.flyTo({ center: coordinates, zoom: ZOOM });
+  const flyTo = (coordinates: [number, number]) => map?.flyTo({ center: coordinates, zoom });
 
   return (
     <Fragment>
       <div ref={mapContainer} />
-      <label className={styles.location} onClick={() => flyTo(coordinates)}>
-        <strong>{city}</strong>
-      </label>
+
+      <Location from={`${lastLocation.city}, ${lastLocation.country}`} to={`${location.city}, ${location.country}`} />
+      <Controls onBackIconClick={() => flyTo(lastLocation.coordinates)} onLocationIconClick={() => flyTo(location.coordinates)} />
     </Fragment>
   );
 };

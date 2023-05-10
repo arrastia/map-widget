@@ -1,0 +1,59 @@
+.location {
+  align-items: flex-start;
+  backdrop-filter: blur(3px);
+  background: var(--noise-background), rgba(255, 255, 255, 0.5);
+  border-radius: 26px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  bottom: 2rem;
+  box-shadow: var(--box-shadow-small);
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  gap: 10px;
+  justify-content: space-between;
+  left: 2rem;
+  letter-spacing: -0.5px;
+  line-height: 21px;
+  padding: 13px 15px;
+  position: absolute;
+  transition: transform 0.2s ease-in-out;
+  width: calc(100% - 4rem);
+  z-index: var(--z-index-foreground);
+}
+.location:hover {
+  transform: scale(1.025);
+  transition: transform 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .location {
+    bottom: 2rem;
+    justify-content: center;
+    left: 2rem;
+    position: fixed;
+    width: calc(100% - 4rem);
+  }
+}
+
+.text {
+  animation: fade-in-out 5s infinite;
+}
+
+@keyframes fade-in-out {
+  from {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  20% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  80% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  to {
+    filter: blur(10px);
+    opacity: 0;
+  }
+}

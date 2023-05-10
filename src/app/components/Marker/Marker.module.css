@@ -1,10 +1,16 @@
 .shadow {
   backdrop-filter: drop-shadow(0px 73px 29px rgba(62, 48, 27, 0.01)) drop-shadow(0px 41px 25px rgba(62, 48, 27, 0.01));
-  background: radial-gradient(50% 50% at 50% 50%, rgba(20, 122, 255, 0.5) 0%, rgba(20, 122, 255, 0) 100%);
+  /* background: radial-gradient(50% 50% at 50% 50%, rgba(20, 122, 255, 0.5) 0%, rgba(20, 122, 255, 0) 100%); */
   border-radius: 50%;
   display: flex;
   height: 83.5px;
   width: 83.5px;
+}
+.shadowCurrent {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(20, 122, 255, 0.5) 0%, rgba(20, 122, 255, 0) 100%);
+}
+.shadowLast {
+  background: radial-gradient(50% 50% at 50% 50%, #ccc 0%, rgba(20, 122, 255, 0) 100%);
 }
 
 .dot {
@@ -23,6 +29,12 @@
   height: 12.5px;
   margin: auto;
   width: 12.5px;
+}
+.innerCurrent {
+  background: linear-gradient(180deg, #7bb5ff 0%, #006fff 100%);
+}
+.innerLast {
+  background: #8e8e8e;
 }
 
 @keyframes pulse {

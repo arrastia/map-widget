@@ -1,7 +1,7 @@
 import styles from './Background.module.css';
 
 export const Background = () => (
-  <svg className={styles.svg} preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100">
+  <svg aria-hidden={true} className={styles.svg} preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100">
     <defs>
       <radialGradient cx="50%" cy="50%" fx="10%" fy="50%" id="Gradient1" r=".5">
         <animate attributeName="fx" dur="34s" repeatCount="indefinite" values="0%;3%;0%" />

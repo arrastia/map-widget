@@ -1,0 +1,37 @@
+.controls {
+  align-items: flex-start;
+  backdrop-filter: blur(3px);
+  background: var(--noise-background), rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-small);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.75rem;
+  position: absolute;
+  right: 2rem;
+  top: 4rem;
+  z-index: var(--z-index-foreground);
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  width: 100%;
+}
+
+.icon {
+  transition: transform 200ms ease-in-out;
+  user-select: none;
+}
+.icon:hover {
+  transform: scale(1.05);
+}
+.icon:active {
+  transform: scale(0.95);
+}
